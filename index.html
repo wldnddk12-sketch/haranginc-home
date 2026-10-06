@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>하랑아이앤씨 | 생산도급·인력도급·채용대행·근로자파견</title>
+<meta name="description" content="하랑아이앤씨는 제조·물류·식품 현장에 필요한 인력을 모집하고 투입 후 관리까지 책임지는 HR 아웃소싱 기업입니다. 생산도급, 인력도급, 채용대행, 근로자파견.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="하랑아이앤씨 HR 아웃소싱">
+<meta property="og:description" content="생산도급 · 인력도급 · 채용대행 · 근로자파견">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: 현장 배치표 — left-aligned sections, each with a Korean title + English rail label (brochure convention), navy hero carrying the logo's swoosh */
+:root{
+  --navy:#0E2A4F; --blue:#1969BC; --blue-2:#3F86D3; --sky:#EAF2FB; --paper:#FFFFFF; --mist:#F4F7FB;
+  --ink:#14233A; --muted:#55657A; --line:#D7E1EC; --signal:#F2A23A; --on-navy:#FFFFFF; --on-navy-muted:#B9CCE4;
+  --serif:"Noto Serif KR","Nanum Myeongjo","Apple SD Gothic Neo",serif;
+  --sans:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1160px;margin:0 auto;padding-inline:24px}
+@media (max-width:600px){.wrap{padding-inline:18px}}
+.todo{background:#FFF1D6;color:#7A4B00;border-radius:3px;padding:0 4px;font-size:.92em}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img.s{width:38px;height:auto}.brand img.w{width:104px;height:auto}
+nav.menu{display:flex;gap:4px}
+nav.menu a{text-decoration:none;color:var(--muted);font-weight:500;font-size:15px;padding:8px 12px;border-radius:6px}
+nav.menu a:hover{color:var(--blue);background:var(--sky)}
+.tel{display:flex;flex-direction:column;align-items:flex-end;line-height:1.25;text-decoration:none}
+.tel small{font-size:12px;color:var(--muted)}
+.tel b{font-size:17px;color:var(--blue);font-variant-numeric:tabular-nums;letter-spacing:.01em}
+@media (max-width:900px){nav.menu{display:none}}
+@media (max-width:420px){.tel small{display:none}.tel b{font-size:15px}.brand img.w{width:86px}}
+
+/* hero */
+.hero{background:var(--navy);color:var(--on-navy);position:relative;overflow:hidden}
+.hero .wrap{position:relative;z-index:1;padding-block:88px 72px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:40px;align-items:center}
+.hero .mark{position:absolute;right:-90px;top:50%;transform:translateY(-50%);width:min(620px,70vw);opacity:.10;filter:brightness(0) invert(1);pointer-events:none}
+.eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-navy-muted);font-weight:600;margin:0 0 18px}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(34px,5.4vw,60px);line-height:1.22;letter-spacing:-.02em;margin:0 0 22px;text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--signal)}
+.hero p.lead{font-size:clamp(16px,1.8vw,19px);color:#DCE7F5;max-width:34em;margin:0 0 32px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;border-radius:8px;padding:13px 22px;font-size:16px;border:1px solid transparent}
+.btn.primary{background:var(--signal);color:#2B1A00}
+.btn.primary:hover{background:#F7B65C}
+.btn.ghost{border-color:rgba(255,255,255,.35);color:var(--on-navy)}
+.btn.ghost:hover{background:rgba(255,255,255,.08)}
+.btn:focus-visible,nav.menu a:focus-visible,.chip:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
+.motto{border-left:2px solid var(--signal);padding-left:20px}
+.motto .fr{font-family:var(--serif);font-size:clamp(22px,2.6vw,30px);letter-spacing:.06em;margin:0 0 6px}
+.motto p{margin:0;color:var(--on-navy-muted);font-size:15px}
+.motto dl{margin:22px 0 0;display:grid;gap:10px}
+.motto dt{font-size:12px;letter-spacing:.12em;color:var(--on-navy-muted)}
+.motto dd{margin:0;font-size:16px}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-block:64px 56px}}
+
+/* figures */
+.figures{background:var(--blue);color:var(--on-navy)}
+.figures ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
+.figures li{padding:26px 18px;border-left:1px solid rgba(255,255,255,.18)}
+.figures li:first-child{border-left:0;padding-left:0}
+.figures b{display:block;font-family:var(--serif);font-size:clamp(24px,3vw,34px);font-weight:700;font-variant-numeric:tabular-nums;line-height:1.2}
+.figures span{font-size:14px;color:#D7E6F8}
+@media (max-width:860px){.figures ul{grid-template-columns:repeat(2,minmax(0,1fr))}.figures li{border-left:0;padding:18px 0;border-top:1px solid rgba(255,255,255,.18)}.figures li:nth-child(-n+2){border-top:0}}
+
+/* sections */
+section.sec{padding-block:96px}
+section.sec.alt{background:var(--mist)}
+.sec-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:36px}
+.sec-head h2{font-family:var(--serif);font-size:clamp(28px,3.4vw,40px);line-height:1.25;margin:0;letter-spacing:-.02em;text-wrap:balance}
+.sec-head .en{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);font-weight:600}
+.sec-head .rule{flex:1;min-width:40px;height:1px;background:var(--line);align-self:center}
+.intro{max-width:44em;color:var(--muted);font-size:17px;margin:-14px 0 40px}
+@media (max-width:600px){section.sec{padding-block:68px}}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start}
+.about .name{display:flex;gap:18px;align-items:center;margin-bottom:22px}
+.about .name img{width:76px}
+.about .name b{font-family:var(--serif);font-size:22px;display:block}
+.about .name span{color:var(--muted);font-size:15px}
+.about p{margin:0 0 16px;max-width:36em}
+.about strong{color:var(--blue);font-weight:600}
+.letter{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:32px}
+.letter h3{font-family:var(--serif);font-size:21px;margin:0 0 16px;line-height:1.45}
+.letter p{color:var(--muted);font-size:15.5px}
+.sign{margin-top:22px;display:flex;justify-content:flex-end;align-items:baseline;gap:10px;color:var(--muted);font-size:14px}
+.sign b{font-family:var(--serif);font-size:22px;color:var(--ink);letter-spacing:.2em}
+@media (max-width:860px){.about{grid-template-columns:1fr;gap:36px}}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.svc{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:30px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.svc header{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.svc h3{font-family:var(--serif);font-size:24px;margin:0}
+.svc header span{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.svc p{margin:0;color:var(--muted);font-size:15.5px}
+.flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:14px;background:var(--sky);border-radius:8px;padding:12px 14px}
+.flow b{background:var(--paper);border:1px solid #C6D8EE;border-radius:999px;padding:3px 12px;font-weight:600;color:var(--navy)}
+.flow i{font-style:normal;color:var(--blue);font-size:13px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.tags span{font-size:13px;border:1px solid var(--line);border-radius:999px;padding:3px 11px;color:var(--ink)}
+@media (max-width:760px){.services{grid-template-columns:1fr}}
+
+/* why */
+.why{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:2px solid var(--navy)}
+.why div{padding:26px 22px 8px 0}
+.why div+div{padding-left:22px;border-left:1px solid var(--line)}
+.why h3{font-size:19px;margin:0 0 4px}
+.why small{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:12px;font-weight:600}
+.why p{margin:0;color:var(--muted);font-size:15px}
+.advisors{margin-top:34px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:15px;color:var(--muted)}
+.advisors b{color:var(--ink)}
+@media (max-width:860px){.why{grid-template-columns:repeat(2,minmax(0,1fr))}.why div,.why div+div{padding:22px 16px 18px 0;border-left:0;border-bottom:1px solid var(--line)}}
+@media (max-width:480px){.why{grid-template-columns:1fr}}
+
+/* process */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;counter-reset:s}
+.steps li{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:26px 22px;counter-increment:s;min-width:0}
+.steps li::before{content:"STEP " counter(s);display:block;font-size:12px;letter-spacing:.14em;color:var(--blue);font-weight:700;margin-bottom:10px}
+.steps h3{font-size:18px;margin:0 0 10px}
+.steps ul{margin:0;padding-left:18px;color:var(--muted);font-size:14.5px}
+.steps ul li{all:unset;display:list-item;margin:3px 0}
+.steps ul li::before{content:none}
+@media (max-width:960px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+.care{margin-top:56px;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px}
+.care h3{font-family:var(--serif);font-size:22px;margin:0 0 16px}
+.channels{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.channels li{padding-left:18px;position:relative;font-size:15.5px}
+.channels li::before{content:"";position:absolute;left:0;top:.75em;width:8px;height:2px;background:var(--blue)}
+.mgmt{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 28px}
+.mgmt h4{margin:0 0 4px;font-size:16px;color:var(--navy)}
+.mgmt p{margin:0;color:var(--muted);font-size:14.5px}
+@media (max-width:860px){.care{grid-template-columns:1fr}.mgmt{grid-template-columns:1fr}}
+
+/* network */
+.net{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
+.route{list-style:none;margin:0;padding:0;position:relative}
+.route::before{content:"";position:absolute;left:11px;top:14px;bottom:14px;width:2px;background:linear-gradient(var(--blue),var(--blue-2))}
+.route li{position:relative;padding:10px 0 10px 40px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.route li::before{content:"";position:absolute;left:4px;top:17px;width:16px;height:16px;border-radius:50%;background:var(--paper);border:3px solid var(--blue)}
+.route li.hq::before{background:var(--blue)}
+.route b{font-size:19px}
+.route span{color:var(--muted);font-size:14px}
+.net p{color:var(--muted);max-width:30em}
+@media (max-width:860px){.net{grid-template-columns:1fr;gap:28px}}
+
+/* clients */
+.filter{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px}
+.chip{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:6px 14px;font:inherit;font-size:14px;cursor:pointer;color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:var(--on-navy)}
+.chip small{color:inherit;opacity:.7;margin-left:4px;font-variant-numeric:tabular-nums}
+.clients{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.clients li{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;min-width:0}
+.clients b{font-weight:600;font-size:15px}
+.clients span{font-size:13px;color:var(--muted)}
+.count{color:var(--muted);font-size:14px;margin:14px 0 0}
+
+/* contact */
+.contact{background:var(--navy);color:var(--on-navy)}
+.contact .sec-head h2{color:var(--on-navy)}.contact .sec-head .en{color:var(--signal)}.contact .sec-head .rule{background:rgba(255,255,255,.2)}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.card{border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:30px;min-width:0}
+.card h3{font-family:var(--serif);font-size:23px;margin:0 0 8px}
+.card p{margin:0 0 20px;color:var(--on-navy-muted);font-size:15.5px}
+.card .num{font-size:clamp(24px,3vw,32px);font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:.01em;user-select:all;display:block}
+.card .sub{font-size:14px;color:var(--on-navy-muted);margin-top:4px}
+.copy{margin-top:16px;background:transparent;border:1px solid rgba(255,255,255,.35);color:var(--on-navy);border-radius:6px;padding:7px 14px;font:inherit;font-size:14px;cursor:pointer}
+.copy:hover{background:rgba(255,255,255,.08)}
+@media (max-width:760px){.cards{grid-template-columns:1fr}}
+
+footer{background:#0A1F3B;color:#9FB3CC;font-size:13.5px}
+footer .wrap{padding-block:36px;display:flex;flex-wrap:wrap;gap:18px 40px;justify-content:space-between}
+footer dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 14px}
+footer dt{color:#6F87A6}footer dd{margin:0}
+footer .brandf img{filter:brightness(0) invert(1);opacity:.85}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="하랑 홈"><img class="s" src="assets/harang-symbol.png" alt=""><img class="w" src="assets/harang-wordmark.png" alt="HARANG"></a>
+    <nav class="menu" aria-label="주요 메뉴">
+      <a href="#about">회사 소개</a><a href="#services">사업 분야</a><a href="#process">채용·관리</a><a href="#network">지사</a><a href="#clients">고객사</a><a href="#contact">문의</a>
+    </nav>
+    <a class="tel" href="tel:07086480914"><small>인력 상담</small><b>070-8648-0914</b></a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <img class="mark" src="assets/harang-symbol.png" alt="">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">HR Outsourcing · 생산도급 · 인력도급 · 채용대행 · 근로자파견</p>
+      <h1>필요한 인력을,<br>필요한 현장에 <em>빠르게</em>.</h1>
+      <p class="lead">하랑은 제조·물류·식품 현장에 맞는 인력을 모집하고, 투입 후 근태와 급여, 현장 관리까지 책임지는 HR 아웃소싱 파트너입니다.</p>
+      <div class="ctas"><a class="btn primary" href="#contact">인력 문의하기</a><a class="btn ghost" href="#services">사업 분야 보기</a></div>
+    </div>
+    <div class="motto">
+      <p class="fr">On avance, On avance.</p>
+      <p>앞으로 나아가다</p>
+      <dl>
+        <div><dt>하랑</dt><dd>함께 높이 날다</dd></div>
+        <div><dt>약속</dt><dd>기업에는 인재경쟁력과 비용 절감을, 인재에게는 삶의 터전을</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<div class="figures" aria-label="기업 현황">
+  <div class="wrap"><ul>
+    <li><b>2020</b><span>설립</span></li>
+    <li><b>300억</b><span>연간 매출</span></li>
+    <li><b>약 800명</b><span>운영 인원</span></li>
+    <li><b>100곳+</b><span>거래 고객사</span></li>
+    <li><b>3곳</b><span>오산 본사 · 천안 · 아산 지사</span></li>
+  </ul></div>
+</div>
+
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="sec-head"><h2>회사 소개</h2><span class="en">Company Profile</span><span class="rule"></span></div>
+    <div class="about">
+      <div>
+        <div class="name"><img src="assets/harang-symbol.png" alt=""><div><b>하랑아이앤씨</b><span>성공적인 인사관리를 위한 맞춤 컨설팅</span></div></div>
+        <p>하랑은 전문 지식과 현장 경험을 바탕으로, 기업에 꼭 맞는 인재를 연결하는 종합 인재 매칭 서비스를 제공합니다.</p>
+        <p>기업의 형태와 분야에 맞춰 생산도급, 인력도급, 채용대행, 근로자파견을 설계하고, 협력사가 안정적인 인력 시스템을 갖추도록 돕습니다.</p>
+        <p>기업에게는 <strong>인재경쟁력, 경비 절감, 효율적인 노사관리</strong>를, 인재에게는 <strong>삶의 터전과 꿈을 실현할 기회</strong>를 드립니다.</p>
+      </div>
+      <article class="letter">
+        <h3>고객과 함께, 직원들과 함께하는 하랑입니다.</h3>
+        <p>창립 이래 꾸준한 투자와 시장 개척으로 제조업, 물류대행, 식품, 패션 등 다양한 분야에서 맞춤형 채용대행과 인사관리 서비스를 제공해 왔습니다.</p>
+        <p>차별화된 인재 POOL과 수년간 쌓아 온 DB로 짧은 시간 안에 양질의 인력을 공급하고, 노무사·변호사·세무사 자문으로 적법하고 유연하게 대응합니다.</p>
+        <p>투명하고 합리적인 경영으로 기업에는 전략적 비즈니스 파트너가, 인재에게는 더 좋은 기회가 되겠습니다.</p>
+        <div class="sign">하랑 대표 <b>최지웅</b></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="services">
+  <div class="wrap">
+    <div class="sec-head"><h2>사업 분야</h2><span class="en">Business Areas</span><span class="rule"></span></div>
+    <p class="intro">기업의 업무 형태에 따라 네 가지 방식 중 가장 알맞은 구조를 함께 정합니다.</p>
+    <div class="services">
+      <article class="svc">
+        <header><h3>생산도급</h3><span>Production Contract</span></header>
+        <p>생산 공정의 일부를 하랑이 위임받아 책임지고 수행합니다. 근로자 조달과 지휘·감독까지 하랑이 맡아, 고객사는 핵심 사업에 집중할 수 있습니다.</p>
+        <div class="flow"><b>고객사</b><i>도급 계약</i><b>하랑</b><i>고용·지휘</i><b>근로자</b></div>
+        <div class="tags"><span>관리비용 최소화</span><span>위험 분산</span><span>신속한 채용·배치</span><span>경쟁력 강화</span></div>
+      </article>
+      <article class="svc">
+        <header><h3>인력도급</h3><span>Human Resource Contract</span></header>
+        <p>비핵심 업무를 전문기관에 맡기는 방식입니다. 생산·물류부터 판매, 사무지원, 급여대행까지 폭넓게 적용되며 하랑 관리자가 현장 관리감독을 수행합니다.</p>
+        <div class="flow"><b>사용업체</b><i>도급 계약</i><b>하랑</b><i>근로·고용</i><b>근로자</b></div>
+        <div class="tags"><span>조직 유연성</span><span>노무관리 효율</span><span>생산성 향상</span><span>비용 절감</span></div>
+      </article>
+      <article class="svc">
+        <header><h3>채용대행</h3><span>Employment Agency</span></header>
+        <p>정규직, 계약직 등 모든 형태의 채용을 맡아 인재 섭외부터 면접까지 진행합니다. 선발된 인재는 입사 시점부터 고객사 소속이 됩니다.</p>
+        <div class="flow"><b>고객사</b><i>채용 의뢰</i><b>하랑</b><i>섭외·면접</i><b>인재</b></div>
+        <div class="tags"><span>채용 기간 단축</span><span>채용 비용 절감</span><span>공정한 선발</span><span>직접·간접 대행</span></div>
+      </article>
+      <article class="svc">
+        <header><h3>근로자파견</h3><span>Dispatch of Workers</span></header>
+        <p>하랑이 고용한 근로자를 고객사에 파견해 고객사의 업무 지시에 따라 일하게 합니다. 고용과 사용이 분리되어 인력 운영이 유연해집니다.</p>
+        <div class="flow"><b>하랑</b><i>파견 계약</i><b>사용사업주</b><i>업무 지휘</i><b>파견근로자</b></div>
+        <div class="tags"><span>핵심업무 집중</span><span>인사·노무 효율</span><span>고정비의 변동비화</span><span>복리후생비 절감</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="why">
+  <div class="wrap">
+    <div class="sec-head"><h2>하랑을 선택하는 이유</h2><span class="en">Why Harang</span><span class="rule"></span></div>
+    <div class="why">
+      <div><small>Reliability</small><h3>신뢰성</h3><p>고객 만족을 최우선으로, 근로자 보호와 관계 법령을 지킵니다.</p></div>
+      <div><small>Know-how</small><h3>노하우</h3><p>운영 분야별 전문가가 직원 관리 시스템을 운영합니다.</p></div>
+      <div><small>HR Database</small><h3>인재 DB</h3><p>다양한 사업 유형에 대응할 수 있는 인재 데이터베이스를 갖추고 있습니다.</p></div>
+      <div><small>Professional</small><h3>전문성</h3><p>체계적인 고객 관리를 위해 전담 사업부를 운영합니다.</p></div>
+    </div>
+    <p class="advisors"><b>자문위원</b> 노무사 · 변호사 · 세무사와 협력해 사고와 분쟁에 적법하게 대응합니다.</p>
+  </div>
+</section>
+
+<section class="sec alt" id="process">
+  <div class="wrap">
+    <div class="sec-head"><h2>채용부터 현장 관리까지</h2><span class="en">Recruitment &amp; Care</span><span class="rule"></span></div>
+    <ol class="steps">
+      <li><h3>서류 심사</h3><ul><li>거주지와 현장 간 교통편 확인</li><li>경력 조회, 이전 퇴사 사유</li><li>지원 동기</li></ul></li>
+      <li><h3>1차 본사 면접</h3><ul><li>담당 Job Manager 1:1 상담</li><li>태도, 이해력, 성실성</li><li>건강 상태, 희망 연봉</li></ul></li>
+      <li><h3>2차 고객사 면접</h3><ul><li>고객사 요구에 맞춘 간단한 인터뷰</li></ul></li>
+      <li><h3>투입 · 안전교육</h3><ul><li>첫 출근 인솔, 근로계약서 작성</li><li>자질과 경력에 맞는 현장 배치</li><li>예절, 사규, 근무수칙 교육</li></ul></li>
+    </ol>
+    <div class="care">
+      <div>
+        <h3>인력 수급 채널</h3>
+        <ul class="channels">
+          <li>자사 인재 DB 활용</li>
+          <li>주요 취업 사이트 광고 · 배너 게재</li>
+          <li>취업박람회 · 인력개발센터</li>
+          <li>직업전문학교 · 학원 · 직업소개소 협력</li>
+          <li>노동부 · 시청 · 구청 구인게시판</li>
+          <li>대학 · 고등학교 취업센터</li>
+          <li>근무지 현수막 · 전단지</li>
+          <li>현장 근무자 지인 추천</li>
+        </ul>
+      </div>
+      <div>
+        <h3>투입 후 관리</h3>
+        <div class="mgmt">
+          <div><h4>근로자 관리</h4><p>투입 후 적응도와 불만 사항을 확인하고, 주 1회 통화·면담으로 장기근속을 돕습니다.</p></div>
+          <div><h4>급여 관리</h4><p>고객사와 근무시간을 이중 확인한 뒤 정산하고, 근로기준법에 맞춰 투명하게 지급합니다.</p></div>
+          <div><h4>현장 관리</h4><p>도급 인원 30명 이상 사업장에는 별도 현장관리자를 두고, 월 1회 안전교육을 진행합니다.</p></div>
+          <div><h4>사후 관리</h4><p>사고나 분쟁이 생기면 노무사·변호사 자문으로 신속하고 적법하게 대응합니다.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="network">
+  <div class="wrap">
+    <div class="sec-head"><h2>지역 네트워크</h2><span class="en">Network</span><span class="rule"></span></div>
+    <div class="net">
+      <ol class="route">
+        <li class="hq"><b>오산 본사</b><span>영업 · 영업관리 · 경영지원</span></li>
+        <li><b>천안 지사</b></li>
+        <li><b>아산 지사</b></li>
+      </ol>
+      <p>오산 본사와 천안·아산 지사가 경기 남부와 충청권 산업단지를 잇습니다. 현장 가까이에서 인력을 모집하고 직접 관리합니다. 고객사의 근무지가 어디든 가장 가까운 지사가 담당합니다.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="clients">
+  <div class="wrap">
+    <div class="sec-head"><h2>함께하는 고객사</h2><span class="en">Clients</span><span class="rule"></span></div>
+    <div class="filter" id="filter" role="group" aria-label="지역별 보기"></div>
+    <ul class="clients" id="clientList"></ul>
+    <p class="count" id="clientCount"></p>
+  </div>
+</section>
+
+<section class="sec contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head"><h2>문의하기</h2><span class="en">Contact</span><span class="rule"></span></div>
+    <div class="cards">
+      <div class="card">
+        <h3>기업 고객</h3>
+        <p>생산도급, 인력도급, 채용대행, 근로자파견 상담. 필요 인원과 근무지를 알려 주시면 담당 지사에서 연락드립니다.</p>
+        <span class="num">070-8648-0914</span>
+        <span class="sub">상담 시간 10:00 ~ 18:00 · 팩스 070-8240-0914</span>
+        <button class="copy" type="button" data-copy="070-8648-0914">번호 복사</button>
+      </div>
+      <div class="card">
+        <h3>일자리를 찾는 분</h3>
+        <p>거주 지역과 희망 근무 형태를 말씀해 주세요. 가까운 현장의 일자리를 안내해 드립니다.</p>
+        <span class="num">070-8648-0914</span>
+        <span class="sub">상담 시간 10:00 ~ 18:00</span>
+        <button class="copy" type="button" data-copy="070-8648-0914">번호 복사</button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="brandf"><img src="assets/harang-wordmark.png" alt="HARANG" style="width:120px"></div>
+    <dl>
+      <dt>상호</dt><dd>하랑아이앤씨</dd>
+      <dt>대표</dt><dd>최지웅</dd>
+      <dt>본사</dt><dd>경기도 오산시 원동 845 양우프라자 802호</dd>
+      <dt>사업자등록번호</dt><dd>192-86-02752</dd>
+      <dt>근로자파견 허가번호</dt><dd>2022-517</dd>
+      <dt>전화 · 팩스</dt><dd>070-8648-0914 · 070-8240-0914</dd>
+    </dl>
+    <p style="margin:0;align-self:flex-end">© 2026 HARANG I&amp;C. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+const CLIENTS=[
+["레이몰드","수원"],["창환단자공업","용인"],["삼화","의왕"],["더마젝트","의왕"],["아비코전자","증평"],["피에스디이","화성"],["태진","서울"],["라피젠","안양·수원"],["미소찬한돈","천안"],["글리쉬","평택"],["한송엠앤티","화성"],["크린토피아","세종·오산·서울·대전"],["일품김치","안성"],["CJ","화성"],["오상헬스케어","안양"],["성우테크","아산"],["견우푸드","경기 광주"],["GS리테일 프레시서브","오산"],
+["해찬솔F3","아산"],["성곡","아산"],["코코스팩","화성"],["뷰티맥스","화성"],["유안","서울"],["디팜스테크","군포"],["GLS로지스텍스","이천"],["PCM","안성"],["마이코파워","안성"],["아쿠아하이텍","수원"],["풍안","화성"],["C&C인터내셔널","화성·용인"],["듀링","서산"],["진한식품","파주"],["삼지","화성"],["글로텍","충주"],["CM파트너","용인"],["DSG테크","용인"],
+["한국아네스트이와타","안산"],["제로테크윈","수원"],["디에이피","안성·안산"],["화니핀코리아","청주"],["주풍","안성"],["신한전자기기","음성"],["효남","안성"],["세광그린푸드","청주"],["그린환경","천안"],["신마로지스","화성"],["하이뷰티","평택"],["에이스코리아","김포"],["BAC","평택"],["동서바이오팜","안성"],["네이버","이천"],["한아름푸드","천안"],["바이오스퀘어","화성"],["어린숲","부천"],
+["조양국제종합물류","청주"],["예스트","평택"],["JI로지스","이천"],["원진물류","용인"],["경일산업","의왕·수원"],["거화","화성"],["바스락","용인"],["세진프리시젼","화성"],["웰디드웍스","오산"],["에이치엔에프","아산"],["이에프코리아","김포"],["호우섬","서울"],["진보","평택"],["디베이스","평택"],["인텔리안","평택"],["아텍트코리아","평택"],["옵티코어","화성"],["탑아이","아산"],
+["엘케이물류","군포"],["슈페리어","서울·동탄"],["아신","용인"],["DK","서울·용인"],["로지시안","이베이코리아"],["수석","화성"],["맥널티코리아","천안"],["예스히팅테크닉스","평택"],["판디아메디텍","시흥"],["H&abyz","용인"],["시스킨코리아","부천"],["호박패밀리","서울"],["우창","성남"],["HB테크놀러지","화성"],["베스트서비스로지스","제주"],["T&L","안성"],["비엘에스","평택"],["동아오츠카","안양"],
+["오성테크닉스","안성"],["에스원피앤피","화성"],["삼천리ENG","서울"],["정성코스메틱","세종"],["씨유메디칼시스템","원주"],["씨엔이","화성"],["신양","화성"],["에이치케이머티리얼즈","천안"],["밸렉스","평택"],["아이에스텍","화성"],["팜에이트","이천"],["서원유리","경기 광주"],["성원로지스","원주"],["가이아","서울"],["엠케이인터내셔널","화성"],["PJK코리아","평택"],["라피드","용인"],["GFFG","서울"]
+];
+const AREAS=["화성","평택","안성","용인","천안","아산","수원","서울","이천","청주"];
+let cur="전체",more=false;
+const fEl=document.getElementById("filter"),lEl=document.getElementById("clientList"),cEl=document.getElementById("clientCount");
+const match=(c,a)=>a==="전체"||c[1].includes(a)||(a==="기타"&&!AREAS.some(x=>c[1].includes(x)));
+function draw(){
+  fEl.replaceChildren(...["전체",...AREAS,"기타"].map(a=>{const b=document.createElement("button");b.type="button";b.className="chip";b.setAttribute("aria-pressed",String(a===cur));
+    b.append(a);const s=document.createElement("small");s.textContent=CLIENTS.filter(c=>match(c,a)).length;b.append(s);b.onclick=()=>{cur=a;draw();};return b;}));
+  const all=CLIENTS.filter(c=>match(c,cur));const list=(cur==="전체"&&!more)?all.slice(0,24):all;
+  lEl.replaceChildren(...list.map(([n,r])=>{const li=document.createElement("li");const b=document.createElement("b");b.textContent=n;const s=document.createElement("span");s.textContent=r;li.append(b,s);return li;}));
+  cEl.replaceChildren(cur==="전체"?`총 ${CLIENTS.length}곳 · 회사소개서 기준 `:`${cur} 지역 ${all.length}곳`);
+  if(cur==="전체"&&all.length>24){const m=document.createElement("button");m.type="button";m.className="chip";m.style.marginLeft="8px";m.textContent=more?"접기":`전체 ${all.length}곳 보기`;m.onclick=()=>{more=!more;draw();};cEl.append(m);}}
+draw();
+document.querySelectorAll("[data-copy]").forEach(btn=>btn.addEventListener("click",async()=>{
+  try{await navigator.clipboard.writeText(btn.dataset.copy);btn.textContent="복사됨";}catch(e){const n=btn.parentElement.querySelector(".num");const r=document.createRange();r.selectNodeContents(n);const s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent="번호를 선택했습니다";}
+  setTimeout(()=>btn.textContent="번호 복사",2000);}));
+</script>
+</body>
+</html>
