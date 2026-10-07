@@ -1,26 +1,15 @@
 # 하랑아이앤씨 회사 홈페이지 (haranginc.co.kr)
 
 - 호스팅: Cloudflare Workers(정적 파일). GitHub main 브랜치에 올리면 1~2분 뒤 자동 배포.
-- 빌드 과정 없음. **모든 파일은 폴더 없이 저장소 맨 위(루트)에 둔다.** (폴더 업로드가 누락되기 쉬워서)
+- 빌드 과정 없음. **index.html 한 파일에 모든 내용·스타일·이미지(로고, 직원 사진, 고객사 로고)가 들어 있음.**
+- 한 페이지 스크롤 방식. 메뉴는 같은 페이지 안의 위치(#about 등)로 이동.
 - 원본 생성 스크립트는 Claude 작업 공간에 있음. 수정은 각 HTML을 직접 고쳐도 됨.
 
-## 페이지
-| 파일 | 메뉴 |
-|---|---|
-| index.html | 홈 (CI 로고 히어로, 사업 분야 요약, 차별성, 고객사 일부) |
-| about.html | 회사 소개 (CI 의미, 맞춤 컨설팅, 기업 현황, 조직도, 팀 코멘트, 비전) |
-| greeting.html | 대표 인사말 |
-| business.html | 사업 분야 4개 + 관계도 + 기대효과, HR 아웃소싱 필요성, 차별성 |
-| process.html | 채용선발기준, 인력수급방법, 근로자관리절차 및 법준수 |
-| network.html | 지사 안내 (오산 본사, 수원·용인·천안·아산 지사) |
-| clients.html | 고객사 로고 118곳 + 지역 필터 |
-| contact.html | 문의 |
+## 섹션 순서 (index.html 안의 id)
+홈(#top) → 회사 소개(#about: CI 의미, 맞춤 컨설팅, 조직도, 팀 코멘트, 비전) → 대표 인사말(#greeting) → 사업 분야(#business: 생산도급 #production, 인력도급 #contract, 채용대행 #agency, 근로자파견 #dispatch, 필요성, 차별성) → 채용·관리(#process) → 지사 안내(#network) → 고객사(#clients, 로고 118곳) → 문의(#contact)
 
-## 공통 파일
-- style.css — 모든 페이지 디자인
-- clients-data.js — 고객사 로고(이미지 내장)와 지역. 하랑·한울 소개서에서 추출
-- logo-symbol.png / logo-wordmark.png / favicon.png — CI
-- team-1.jpg ~ team-3.jpg — 팀 코멘트 사진 (박진호 영업관리팀 팀장, 정태균 영업팀 팀장, 장민혁 영업팀 대리)
+## 팀 코멘트
+박진호 영업관리팀 팀장 · 정태균 영업팀 팀장 · 장민혁 영업팀 대리
 
 ## 회사 정보
 - 본사: 경기도 오산시 오산로 164, 802호 (원동, 양우프라자)
