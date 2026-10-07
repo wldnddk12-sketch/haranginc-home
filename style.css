@@ -226,10 +226,10 @@ a.card{text-decoration:none}a.card:hover{border-color:var(--blue)}
 .mgmt ul{margin:0;padding-left:18px;color:#33445C;font-size:15px}
 
 /* network */
-.branches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.branches{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
 @media (max-width:860px){.branches{grid-template-columns:1fr}}
 .branch{border:1px solid var(--line);border-radius:12px;padding:26px;background:var(--paper)}
-.branch.hq{border:2px solid var(--blue)}
+.branch.hq{border:2px solid var(--blue);grid-column:1/-1}
 .branch .tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;color:#fff;background:var(--blue);border-radius:4px;padding:2px 8px}
 .branch.hq .tag{background:var(--signal);color:#2B1A00}
 .branch h3{font-family:var(--serif);font-size:26px;margin:10px 0 8px}
