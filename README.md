@@ -1,27 +1,37 @@
-# 하랑아이앤씨 회사 홈페이지
+# 하랑아이앤씨 회사 홈페이지 (haranginc.co.kr)
 
-- 공개 주소: https://www.haranginc.co.kr (haranginc.com → 자동 이동)
-- 호스팅: Cloudflare Pages (이 저장소의 main 브랜치에 올리면 자동 배포)
-- 빌드 과정 없음. 정적 HTML 한 페이지.
+- 호스팅: Cloudflare Workers(정적 파일). GitHub main 브랜치에 올리면 1~2분 뒤 자동 배포.
+- 빌드 과정 없음. **모든 파일은 폴더 없이 저장소 맨 위(루트)에 둔다.** (폴더 업로드가 누락되기 쉬워서)
+- 원본 생성 스크립트는 Claude 작업 공간에 있음. 수정은 각 HTML을 직접 고쳐도 됨.
 
-## 파일 구조
-- `index.html` — 홈페이지 전체 (스타일·스크립트 포함)
-- `assets/harang-symbol.png` — 로고 심볼 (회사소개서에서 추출, 원본 색 #1969BC)
-- `assets/harang-wordmark.png` — HARANG 글자 로고
-- `assets/favicon.png` — 브라우저 탭 아이콘
+## 페이지
+| 파일 | 메뉴 |
+|---|---|
+| index.html | 홈 (CI 로고 히어로, 사업 분야 요약, 차별성, 고객사 일부) |
+| about.html | 회사 소개 (CI 의미, 맞춤 컨설팅, 기업 현황, 조직도, 팀 코멘트, 비전) |
+| greeting.html | 대표 인사말 |
+| business.html | 사업 분야 4개 + 관계도 + 기대효과, HR 아웃소싱 필요성, 차별성 |
+| process.html | 채용선발기준, 인력수급방법, 근로자관리절차 및 법준수 |
+| network.html | 지사 안내 (오산 본사, 천안, 아산) |
+| clients.html | 고객사 로고 118곳 + 지역 필터 |
+| contact.html | 문의 |
 
-## 섹션 (index.html 안의 id)
-`#about` 회사 소개 · `#services` 사업 분야 · `#why` 선택 이유 · `#process` 채용·관리 · `#network` 지사 · `#clients` 고객사 (스크립트의 CLIENTS 배열) · `#contact` 문의
+## 공통 파일
+- style.css — 모든 페이지 디자인
+- clients-data.js — 고객사 로고(이미지 내장)와 지역. 하랑·한울 소개서에서 추출
+- logo-symbol.png / logo-wordmark.png / favicon.png — CI
+- team-1.jpg ~ team-3.jpg — 팀 코멘트 사진 (박진호, 정태균, 장민혁)
 
-## 회사 정보 (확정)
-- 본사: 경기도 오산시 원동 845 양우프라자 802호
+## 회사 정보
+- 본사: 경기도 오산시 오산로 164, 802호 (원동, 양우프라자) / 지사: 천안, 아산
 - 사업자등록번호 192-86-02752 · 근로자파견 허가번호 2022-517
-- 상담 시간 10:00~18:00 · Tel 070-8648-0914 · Fax 070-8240-0914
-- 지사: 천안, 아산 (2026-10 기준, 본사는 오산)
+- Tel 070-8648-0914 · Fax 070-8240-0914 · 상담 10:00~18:00
+- 이메일 wldnddk12@haranginc.com (Cloudflare Email Routing → harang2986@naver.com, 받기 전용)
 
-## 남은 일
-- 대표 이메일 wldnddk12@haranginc.com — 메일 수신 설정이 끝나면 #contact 와 footer 에 추가
+## 도메인
+- haranginc.co.kr (대표), www → root 이동
+- haranginc.com / www.haranginc.com → haranginc.co.kr 이동
 
-## 수정 원칙
-- 회사소개서에 있는 사실만 사용. "1등" 같은 최상급 표현은 근거 없으면 쓰지 않음.
-- 고객사 로고는 동의받은 곳만 사용 (현재는 이름만 표시).
+## 작성 원칙
+- 회사소개서 내용 기준. 근거 없는 최상급 표현("1등" 등)은 쓰지 않음.
+- 소개서의 "집단화 방지 대책" 항목과 "근로자 단체행동 시 소속 이원화" 문구는 노동법상 오해 소지가 있어 제외함.
